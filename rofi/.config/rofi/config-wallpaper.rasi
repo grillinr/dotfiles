@@ -22,7 +22,7 @@ imagebox {
 
 entry {
   expand: false;
-  placeholder: "🎞️ Choose Wallpaper";
+  placeholder: "Choose Wallpaper";
 }
 
 /* ---- Listview ---- */
@@ -44,8 +44,8 @@ element-icon {
   size: 20%;
 }
 
-element-text {
-  font: "Fira Code SemiBold 12";
+element-text { 
+  font: "CodeNewRoman Nerd Font Mono";
   vertical-align: 0.5;
   horizontal-align: 0.5;
 }

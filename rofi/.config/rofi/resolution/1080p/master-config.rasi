@@ -4,7 +4,7 @@
 /* ---- Configuration ---- */
 
 configuration {
-	font:						"Fira Code SemiBold 12";
+  font: "CodeNewRoman Nerd Font Mono";
 	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
     display-drun:               "Apps";
@@ -85,7 +85,7 @@ entry {
     background-color:            @selected;
     text-color:                  @text-selected;
     cursor:                      text;
-    placeholder:                 "🖥️ Search "; // << Search symbol
+    placeholder:                 "Search "; // << Search symbol
     placeholder-color:           inherit;
 }
 

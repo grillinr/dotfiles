@@ -5,12 +5,12 @@
 
 /* ---- Configuration ---- */
 configuration {
-	font: "Fira Code SemiBold 12";
+  font: "CodeNewRoman Nerd Font Mono";
 }
 
 /* ---- Window ---- */
 window {
-    width:	60%;
+    width:	40%;
 }
 /* ---- Listview ---- */
 listview {
@@ -32,7 +32,7 @@ element-icon {
 }
 
 element-text {
-  font: "Fira Code SemiBold 12";
+  font: "CodeNewRoman Nerd Font Mono";
   vertical-align: 0.5;
   horizontal-align: 0.5;
 }

@@ -4,7 +4,7 @@
 /* ---- Configuration ---- */
 
 configuration {
-	font:						"Fira Code SemiBold 12";
+  font: "CodeNewRoman Nerd Font Mono";
 	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
     display-drun:               "Apps";
@@ -72,7 +72,6 @@ inputbar {
     border-radius:               25px;
     orientation:                 horizontal;
     children:                    ["entry", "dummy", "mode-switcher" ];
-    background-image:            url("~/.config/rofi/.current_wallpaper", width);
 }
 
 /* ---- Entry input ---- */
@@ -85,7 +84,7 @@ entry {
     background-color:            @selected;
     text-color:                  @text-selected;
     cursor:                      text;
-    placeholder:                 "🖥️ Search "; // << Search symbol
+    placeholder:                 "Search "; // << Search symbol
     placeholder-color:           inherit;
 }
 
@@ -209,7 +208,7 @@ element-icon {
     cursor:                      inherit;
 }
 element-text {
-    font:						"Fira Code SemiBold 12";
+    font: "CodeNewRoman Nerd Font Mono";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
