@@ -61,42 +61,6 @@ main() {
   cat ~/.cache/wal/colors-kitty.conf >~/.config/kitty/current-theme.conf
   pywalfox update
 
-  # Update rofi theme
-  ROFI_THEME_FILE="$HOME/.config/rofi/wallust/colors-rofi.rasi"
-  WAL_COLORS="$HOME/.cache/wal/colors"
-  COLOR0=$(sed -n '1p' $WAL_COLORS)
-  COLOR1=$(sed -n '2p' $WAL_COLORS)
-  COLOR6=$(sed -n '7p' $WAL_COLORS)
-  COLOR7=$(sed -n '8p' $WAL_COLORS)
-  COLOR9=$(sed -n '10p' $WAL_COLORS)
-  COLOR15=$(sed -n '16p' $WAL_COLORS)
-  cat >"$ROFI_THEME_FILE" <<EOF
-* {
-    active-background: $COLOR1;
-    active-foreground: $COLOR15;
-    normal-background: $COLOR0;
-    normal-foreground: $COLOR7;
-    urgent-background: $COLOR9;
-    urgent-foreground: $COLOR15;
-    alternate-active-background: $COLOR6;
-    alternate-active-foreground: $COLOR15;
-    alternate-normal-background: $COLOR0;
-    alternate-normal-foreground: $COLOR7;
-    alternate-urgent-background: $COLOR0;
-    alternate-urgent-foreground: $COLOR15;
-    selected-active-background: $COLOR1;
-    selected-active-foreground: $COLOR15;
-    selected-normal-background: $COLOR6;
-    selected-normal-foreground: $COLOR15;
-    selected-urgent-background: $COLOR9;
-    selected-urgent-foreground: $COLOR15;
-    background-color: $COLOR0;
-    background: rgba(0, 0, 0, 0.7);
-    foreground: $COLOR7;
-    border-color: $COLOR1;
-}
-EOF
-
   # Refresh scripts
   "$SCRIPTSDIR/WallustSwww.sh"
   sleep 2
