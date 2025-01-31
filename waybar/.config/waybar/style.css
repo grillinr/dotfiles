@@ -6,33 +6,29 @@
 }
 window#waybar {
   all: unset;
+  background: alpha(@background, 0.5);
 }
 .modules-left {
   padding: 7px;
   margin: 5px;
   border-radius: 10px;
-  background: alpha(@background, 0.5);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 .modules-center {
   padding: 7px;
   margin: 5px;
   border-radius: 10px;
-  background: alpha(@background, 0.5);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 .modules-right {
   padding: 7px;
   margin: 5px;
   border-radius: 10px;
-  background: alpha(@background, 0.5);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 tooltip {
   background: @background;
   color: @color7;
 }
 #clock:hover,
+#pulseaudio:hover,
 #custom-pacman:hover,
 #custom-notification:hover,
 #bluetooth:hover,
@@ -48,6 +44,11 @@ tooltip {
   padding: 0px 5px;
   transition: all 0.3s ease;
   color: @color7;
+}
+#pulseaudio {
+  padding: 0px 0px;
+  color: @color7;
+  transition: all 0.3s ease;
 }
 #clock {
   padding: 0px 5px;
@@ -65,13 +66,13 @@ tooltip {
 #workspaces button {
   all: unset;
   padding: 0px 5px;
-  color: alpha(@color9, 0.4);
+  color: alpha(@color9, 0.5);
   transition: all 0.2s ease;
 }
 #workspaces button:hover {
-  color: rgba(0, 0, 0, 0);
+  color: alpha(@color9, 0.9);
   border: none;
-  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
   transition: all 1s ease;
 }
 #workspaces button.active {
@@ -80,14 +81,14 @@ tooltip {
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 #workspaces button.empty {
-  color: rgba(0, 0, 0, 0);
+  color: alpha(@color9, 0.5);
   border: none;
-  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 #workspaces button.empty:hover {
-  color: rgba(0, 0, 0, 0);
+  color: alpha(@color9, 0.9);
   border: none;
-  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
   transition: all 1s ease;
 }
 #workspaces button.empty.active {
@@ -114,11 +115,11 @@ tooltip {
   color: #26a65b;
 }
 
-#battery.warning:not(.charging) {
+#battery.warning:not(charging) {
   color: #ffbe61;
 }
 
-#battery.critical:not(.charging) {
+#battery.critical:not(charging) {
   color: #f53c3c;
   animation-name: blink;
   animation-duration: 0.5s;

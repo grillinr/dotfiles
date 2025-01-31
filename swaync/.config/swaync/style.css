@@ -1,7 +1,7 @@
 @import url("/home/nathan/.cache/wal/colors-waybar.css");
 @define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
 @define-color mpris-button-hover rgba(0, 0, 0, 0.50);
-@define-color text @color7;
+@define-color text rgba(255,255,255,1);
 @define-color bg alpha(@background,.5);
 @define-color bg-hover rgba(50,50,50,.8);
 @define-color mycolor @color9;
