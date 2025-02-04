@@ -2,7 +2,7 @@
 # Merged wallpaper script combining WallpaperSelect.sh UI and wallpaper.sh features
 
 # WALLPAPERS DIRECTORY
-WALLPAPER_DIR="/home/nathan/wallpapers/walls"
+WALLPAPER_DIR="$HOME/wallpapers/walls"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 
 # Variables
@@ -15,14 +15,11 @@ SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration
 
 # Retrieve image files
 mapfile -d '' PICS < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
-RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
-RANDOM_PIC_NAME=". random"
 
 # Rofi menu
 rofi_command="rofi -i -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
 menu() {
   IFS=$'\n' sorted_options=($(sort <<<"${PICS[*]}"))
-  printf "%s\x00icon\x1f%s\n" "$RANDOM_PIC_NAME" "$RANDOM_PIC"
   for pic_path in "${sorted_options[@]}"; do
     pic_name=$(basename "$pic_path")
     if [[ ! "$pic_name" =~ \.gif$ ]]; then
