@@ -23,6 +23,25 @@ source $ZSH/oh-my-zsh.sh
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
 fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
+# git repository greeter
+last_repository=
+check_directory_for_new_repository() {
+ current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
+ 
+ if [ "$current_repository" ] && \
+    [ "$current_repository" != "$last_repository" ]; then
+  onefetch
+ fi
+ last_repository=$current_repository
+}
+cd() {
+ builtin cd "$@"
+ check_directory_for_new_repository
+}
+
+# optional, greet also when opening shell directly in repository directory
+# adds time to startup
+check_directory_for_new_repository
 
 # Set-up icons for files/folders in terminal
 alias ls='eza -a --icons'
@@ -49,7 +68,7 @@ SAVEHIST=10000
 setopt appendhistory
 
 export PATH=$PATH:/home/nathan/.spicetify
-
+export PATH=$PATH:/home/nathan/.cargo/bin
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
