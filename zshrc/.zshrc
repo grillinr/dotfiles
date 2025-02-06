@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 #pokemon-colorscripts --no-title -s -r
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
-fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
+fastfetch # -c $HOME/.config/fastfetch/config-compact.jsonc
 # git repository greeter
 last_repository=
 check_directory_for_new_repository() {
