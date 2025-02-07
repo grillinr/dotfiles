@@ -30,7 +30,7 @@ check_directory_for_new_repository() {
  
  if [ "$current_repository" ] && \
     [ "$current_repository" != "$last_repository" ]; then
-  onefetch
+  onefetch --include-hidden
  fi
  last_repository=$current_repository
 }
@@ -59,6 +59,7 @@ alias hypr='cd ~/.config/hypr/'
 alias tasks='bpytop'
 alias viruscheck='sudo clamscan -r /'
 alias spot="ncspot"
+alias clear="clear && fastfetch"
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
 
