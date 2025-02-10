@@ -6,7 +6,7 @@
 }
 window#waybar {
   all: unset;
-  background: alpha(@background, 0.5);
+  background: @background;
 }
 .modules-left {
   padding: 7px;
