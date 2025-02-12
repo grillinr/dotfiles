@@ -72,7 +72,7 @@ export PATH=$PATH:/home/nathan/.spicetify
 export PATH=$PATH:/home/nathan/.cargo/bin
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 # Created by `pipx` on 2025-02-04 14:54:31
 export PATH="$PATH:/home/nathan/.local/bin"
