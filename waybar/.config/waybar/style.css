@@ -6,7 +6,7 @@
 }
 window#waybar {
   all: unset;
-  background: @background;
+  background: rgb(0, 0, 0);
 }
 .modules-left {
   padding: 7px;

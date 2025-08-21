@@ -1,5 +1,4 @@
 {
-    "layer": "top",
         "position": "top",
         "height": 40,
         "reload_style_on_change": true,
