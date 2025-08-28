@@ -65,6 +65,8 @@ alias tasks='bpytop'
 alias viruscheck='sudo clamscan -r /'
 alias spot="ncspot"
 alias clear="clear && fastfetch"
+alias connect="ssh ssh.nathangrilliot.com"
+alias diskinfo='df -h'
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
 HISTFILE=~/.zsh_history
