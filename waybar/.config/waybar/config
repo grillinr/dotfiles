@@ -25,7 +25,7 @@
             "escape": true
         },
         "clock": {
-            "format": "{:%H:%M%p} ",
+            "format": "{:%I:%M%p} ",
             "interval": 1,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
