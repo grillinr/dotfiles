@@ -69,3 +69,4 @@ status:
 	@echo ""
 	@if [ -L ~/Pictures/wallpapers ]; then echo "✓ Wallpapers symlink created"; else echo "✗ Wallpapers symlink not created"; fi
 	@if [ -L ~/Pictures/walls ]; then echo "✓ Walls directory symlink created"; else echo "✗ Walls directory symlink not created"; fi
+

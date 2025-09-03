@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
-alias hypr='cd /home/nathan/.config/hypr'
+alias hypr='cd /home/nathan/.config/hypr && nvim .'
 alias install='yay -S'
 alias uninstall='yay -Rns'
 alias school='cd /home/nathan/repos/school'
