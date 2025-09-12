@@ -6,6 +6,8 @@
 /* ---- Configuration ---- */
 configuration {
   font: "CodeNewRoman Nerd Font Mono";
+  matching: "normal";
+  drun-match-fields: "name";
 }
 
 /* ---- Window ---- */

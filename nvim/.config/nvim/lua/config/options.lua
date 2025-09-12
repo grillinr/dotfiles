@@ -5,6 +5,3 @@
 -- return {
 --   "ellisonleao/gruvbox.nvim", -- Example theme
 -- }
-return {
-  { "AlphaTechnolog/pywal.nvim", name = "pywal" },
-}
