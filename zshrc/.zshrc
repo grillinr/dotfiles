@@ -3,10 +3,6 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 
 fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 
 # git repository greeter
 last_repository=
@@ -28,13 +24,9 @@ cd() {
 # adds time to startup
 check_directory_for_new_repository
 
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
 
 plugins=(
     git
@@ -59,7 +51,6 @@ alias pacup='sudo pacman -Rns $(pacman -Qdtq)'
 alias grep='grep --color=auto'
 alias pool='clear && asciiquarium'
 alias fonts='fc-list -f "%{family}\n"'
-alias hypr='cd ~/.config/hypr/'
 alias tasks='bpytop'
 alias viruscheck='sudo clamscan -r /'
 alias spot="ncspot"
@@ -81,6 +72,3 @@ export PATH=$PATH:/home/nathan/.cargo/bin
 
 # Created by `pipx` on 2025-02-04 14:54:31
 export PATH="$PATH:/home/nathan/.local/bin"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
