@@ -5,24 +5,24 @@
 fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
 # git repository greeter
-last_repository=
-check_directory_for_new_repository() {
- current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
- 
- if [ "$current_repository" ] && \
-    [ "$current_repository" != "$last_repository" ]; then
-  onefetch --include-hidden --nerd-fonts
- fi
- last_repository=$current_repository
-}
-cd() {
- builtin cd "$@"
- check_directory_for_new_repository
-}
+# last_repository=
+# check_directory_for_new_repository() {
+#  current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
+#
+#  if [ "$current_repository" ] && \
+#     [ "$current_repository" != "$last_repository" ]; then
+#   onefetch --include-hidden --nerd-fonts
+#  fi
+#  last_repository=$current_repository
+# }
+# cd() {
+#  builtin cd "$@"
+#  check_directory_for_new_repository
+# }
 
 # optional, greet also when opening shell directly in repository directory
 # adds time to startup
-check_directory_for_new_repository
+# check_directory_for_new_repository
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -57,6 +57,7 @@ alias spot="ncspot"
 alias connect="ssh ssh.nathangrilliot.com"
 alias diskinfo='df -h'
 alias gqlgen='go run github.com/99designs/gqlgen generate'
+alias update="yay; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read; pkill -SIGRTMIN+8 waybar"
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
 HISTFILE=~/.zsh_history
