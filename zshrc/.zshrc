@@ -1,9 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-
-fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
-
 # git repository greeter
 # last_repository=
 # check_directory_for_new_repository() {
@@ -37,15 +31,18 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source .config/hypr/obscure-scripts/package_management.sh
 
 # Set-up icons for files/folders in terminal
-alias ls='eza -a --icons'
-alias ll='eza -al --icons'
-alias lt='eza -a --tree --level=1 --icons'
+alias ls='eza -1 --icons'
+alias la='eza -1a --icons'
+alias lla='eza -1la --icons'
+alias ll='eza -1l --icons'
+alias lt='eza --tree --level=1 --icons'
 alias hypr='cd /home/nathan/.config/hypr; nvim .'
-alias install='yay -S'
-alias uninstall='yay -Rns'
-alias school='cd /home/nathan/repos/school'
+alias install-man='yay -S'
+alias uninstall-man='yay -Rns'
+alias school='cd /home/nathan/repos/school/25FS/'
 alias nq='cd /home/nathan/repos/nq; nvim .'
 alias pacup='sudo pacman -Rns $(pacman -Qdtq)'
 alias grep='grep --color=auto'
@@ -58,6 +55,8 @@ alias connect="ssh ssh.nathangrilliot.com"
 alias diskinfo='df -h'
 alias gqlgen='go run github.com/99designs/gqlgen generate'
 alias update="yay; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read; pkill -SIGRTMIN+8 waybar"
+alias cd="z"
+alias about='fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc'
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
 HISTFILE=~/.zsh_history
@@ -73,3 +72,4 @@ export PATH=$PATH:/home/nathan/.cargo/bin
 
 # Created by `pipx` on 2025-02-04 14:54:31
 export PATH="$PATH:/home/nathan/.local/bin"
+eval "$(zoxide init zsh)"

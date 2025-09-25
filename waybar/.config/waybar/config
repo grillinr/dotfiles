@@ -2,25 +2,36 @@
         "position": "top",
         "height": 20,
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","clock","custom/pacman"],
-        "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["group/expand","bluetooth","network", "pulseaudio", "battery"],
+        "modules-left": ["custom/notification","custom/pacman","hyprland/workspaces"],
+        "modules-center": ["clock"],
+        "modules-right": ["custom/colorpicker","cpu","memory","temperature", "bluetooth","network", "pulseaudio", "battery"],
 
 
         "hyprland/workspaces": {
-            "format": "{icon}",
-            "format-icons": {                
-                "active": "󰄯",
-                "default": "󰄯",
-                "empty": "󰄯"
-                // "default": "󰪥",
-                // "empty": "󰄰"
-            },
-            "persistent-workspaces": {
-                "*": 3
-            }
+          "on-click": "activate",
+          "format": "{icon}",
+          "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󱓻"
+          },
+          "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+          }
         },
-        "custom/notification": {
+  "custom/notification": {
             "tooltip": false,
             "format": "󰣇",
             "on-click": "swaync-client -t -sw",
@@ -110,19 +121,6 @@
         "custom/expand": {
             "format": "",
             "tooltip": false
-        },
-        "custom/endpoint":{
-            "format": "|",
-            "tooltip": false
-        },
-        "group/expand": {
-            "orientation": "horizontal",
-            "drawer": {
-                "transition-duration": 600,
-                "transition-to-left": true,
-                "click-to-reveal": true
-            },
-            "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","custom/endpoint"]
         },
         "custom/colorpicker": {
             "format": "{}",
