@@ -1,40 +1,128 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Main Config 1080p */
-
-@import "~/.config/rofi/master-config.rasi" 
+@theme "~/.config/rofi/colors-gruvbox.rasi"
 
 /* ---- Configuration ---- */
 configuration {
-  font: "CodeNewRoman Nerd Font Mono";
-  matching: "normal";
-  drun-match-fields: "name";
+    font: "CodeNewRoman Nerd Font Mono 16";
+    modi: "drun";
+    show-icons: true;
+    drun-display-format: "{name}";
+    hover-select: true;
+    me-select-entry: "MouseSecondary";
+    me-accept-entry: "MousePrimary";
+    dpi: 1;
+    matching: "normal";
+    drun-match-fields: "name";
+}
+
+/* ---- Global Properties ---- */
+* {
+    background-alt: @background-alt;
+    selected: @active-foreground;
+    active: @selected-normal-background;
+    urgent: @selected;
+    text-selected: @background;
+    text-color: @foreground;
+    border-color: @selected;
 }
 
 /* ---- Window ---- */
 window {
-    width:	40%;
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: @foreground;
+    location: center;
+    width: 20%;        /* from 1080p config (overrides 50%) */
+    background-color: @background;
 }
+
+/* ---- Main Elements ---- */
+mainbox, inputbar, listbox, listview {
+    background-color: transparent;
+}
+mainbox {
+    padding: 5px;
+    children: ["inputbar", "listview"];
+}
+inputbar {
+    padding: 5px;
+    children: ["entry"];
+}
+
+/* ---- Entry ---- */
+entry {
+  margin: 0;
+  padding: 8px;
+  border-radius: 15px;
+  background-color: @selected;
+  text-color: @text-selected;
+  placeholder: "Search";
+}
+
 /* ---- Listview ---- */
 listview {
-  columns: 6;
-  lines: 4;
-  fixed-height:	true;
+    cycle: true;
+    spacing: 5px;
+    columns: 1;
+    lines: 5;
+    fixed-height: false;
+    fixed-columns: true;
 }
 
-/* ---- Element ---- */
+/* ---- Elements ---- */
 element {
-  orientation: vertical;
-  padding: 12px 0px 0px 0px;
-  spacing: 6px;
-  border-radius: 12px;
+    orientation: horizontal;
+    padding: 8px 10px 0px 0px;
+    spacing: 15px;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
+element.normal.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element.alternate.normal {
+    background-color: transparent;  /* same as normal */
+    text-color: @foreground;
+}
+
+element selected.normal {
+    border: 2px solid;
+    border-color: @selected;
+    border-radius: 12px;
+    background-color: @selected;
+    text-color: @text-selected;
+}
+
+/* ---- Icons ---- */
 element-icon {
-  size: 6%;
+    size: 48px;
+    background-color: @foreground;
+    // padding: 10px 10px 10px 10px;
+    margin: 7px 10px 7px 10px;
+    border-radius: 50%;
+    text-color: inherit;
+    cursor: inherit;
+}
+element-text {
+    font: "CodeNewRoman Nerd Font Mono";
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 1;
 }
 
-element-text {
-  font: "CodeNewRoman Nerd Font Mono";
-  vertical-align: 0.5;
-  horizontal-align: 0.5;
+/* ---- Scrollbar ---- */
+scrollbar {
+    handle-color: @border-color;
+    handle-width: 6px;
+}
+
+/* ---- Message & Errors ---- */
+textbox, error-message {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: @background-alt;
+    text-color: @background;
 }

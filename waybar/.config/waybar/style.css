@@ -111,10 +111,10 @@ tooltip {
 }
 
 #battery.critical:not(.charging) {
-  color: #f53c3c;
+  color: #e34e25;
   background-color: transparent;
   text-decoration: none;
-  animation: blink 0.5s linear infinite alternate;
+  animation: blink 1s linear infinite alternate;
 }
 
 @keyframes blink {
@@ -122,7 +122,7 @@ tooltip {
     opacity: 1;
   }
   to {
-    opacity: 0.3;
+    opacity: 0.75;
   }
 }
 

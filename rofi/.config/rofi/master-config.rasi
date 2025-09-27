@@ -13,12 +13,13 @@ configuration {
 }
 
 /* ---- Load Colors ---- */
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
+// @theme "~/.cache/wal/colors-rofi-dark.rasi"
+@theme "~/.config/rofi/colors-gruvbox.rasi"
 
 /* ---- Global Properties ---- */
 * {
     background-alt: @selected-active-background;
-    selected: @selected-urgent-background;
+    selected: @active-foreground;
     active: @selected-normal-background;
     urgent: @selected;
     text-selected: @background;
@@ -29,6 +30,8 @@ configuration {
 /* ---- Window ---- */
 window {
     border-radius: 20px;
+    border: 2px solid;
+    border-color: @foreground;
     location: center;
     width: 50%;
     background-color: @background;
@@ -78,6 +81,16 @@ element-icon {
     background-color: transparent;
     text-color: inherit;
     cursor: inherit;
+}
+
+element.normal.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element.alternate.normal {
+    background-color: transparent;  /* same as normal */
+    text-color: @foreground;
 }
 element-text {
     font: "CodeNewRoman Nerd Font Mono";

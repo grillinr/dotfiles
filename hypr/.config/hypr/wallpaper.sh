@@ -2,7 +2,7 @@
 # Merged wallpaper script combining WallpaperSelect.sh UI and wallpaper.sh features
 
 # WALLPAPERS DIRECTORY
-WALLPAPER_DIR="$HOME/wallpapers/walls"
+WALLPAPER_DIR="$HOME/repos/dotfiles/wallpapers/wallpapers"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 
 # Variables
