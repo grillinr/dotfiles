@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Update installed package list in dotfiles repo
+When = PostTransaction
+Exec = /usr/local/bin/update-package-list
+
