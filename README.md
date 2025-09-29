@@ -1,47 +1,19 @@
 # Arch Linux Dotfiles
 
-This repository contains my Arch Linux dotfiles and configuration files, managed using `stow` for easy installation and maintenance.
+This repository contains my Arch Linux dotfiles with a Gruvbox theme and configuration files, managed using `stow` for easy installation and maintenance.
 
-## Features
+## 🚀 Quick Installation
 
-- **Window Manager**: Hyprland with custom configuration
-- **Status Bar**: Waybar with custom modules
-- **Terminal**: Kitty with custom theme and configuration
-- **Application Launcher**: Rofi (Wayland) with custom theme
-- **Notification Daemon**: SwayNC
-- **Logout Screen**: Wlogout
-- **File Manager**: Thunar
-- Notifications: mako
-- **Text Editor**: Neovim with LazyVim configuration
-- **Shell**: Zsh with custom configuration
-- **System Monitor**: Btop, Htop
-- **Browser**: Firefox, Zen Browser
+**ALWAYS READ SCRIPTS BEFORE RUNNING ON YOUR SYSTEM**
 
-## Installation
+```bash
+curl -fsSL https://github.com/grillinr/dotfiles/raw/main/install.sh | bash
+```
 
-### Prerequisites
+## 🛠️ Installation
 
-- Arch Linux system
-- `sudo` access
-- Internet connection
-
-### Quick Install
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone https://github.com/grillinr/dotfiles.git ~/dotfiles
-   cd ~/dotfiles
-   ```
-
-2. **Run the installation script**:
-   ```bash
-   chmod +x install.sh
-   ./install.sh
-   ```
-
-The script will:
-
+### Automatic Installation (Recommended)
+The installation script will automatically:
 - Install all required packages from official repositories and AUR
 - Backup existing dotfiles
 - Symlink all configuration files using `stow`
@@ -49,32 +21,89 @@ The script will:
 - Add user to required groups
 
 ### Manual Installation
+```bash
+# Install packages
+sudo pacman -S --needed $(cat packages/pkglist.txt)
+yay -S --needed $(cat packages/aur-installed.txt | grep -v "->" | awk '{print $1}')
 
-If you prefer to install manually:
+# Install GNU Stow
+sudo pacman -S stow
 
-1. **Install packages**:
+# Install dotfiles
+./install.sh
+```
 
-   ```bash
-   # Install official packages
-   sudo pacman -S --needed $(cat packages/package-list.txt)
+## 🔧 Post-Installation
 
-   # Install AUR packages (requires yay)
-   yay -S --needed $(cat packages/aur-packages.txt)
-   ```
+1. **Restart your terminal** for Zsh changes to take effect
+2. **Log out and back in** for Hyprland changes
+3. **Restart applications** for config changes
 
-2. **Install stow**:
+## ✨ Features
 
-   ```bash
-   sudo pacman -S stow
-   ```
+- **Window Manager**: Hyprland with custom configuration
+- **Status Bar**: Waybar with custom modules
+- **Terminal**: Kitty with custom theme and configuration
+- **Application Launcher**: Rofi (Wayland) with custom theme
+- **Notification Daemon**: SwayNC
+- **Logout Screen**: Wlogout
+- **Text Editor**: Neovim with LazyVim configuration
+- **Shell**: Zsh with custom configuration
+- **File Manager**: Thunar
+- **Browser**: Firefox, Zen Browser
+- **System Monitor**: Btop, Htop
 
-3. **Symlink dotfiles**:
-   ```bash
-   # From the dotfiles directory
-   stow hypr waybar kitty rofi wlogout fastfetch nvim zshrc wallpapers
-   ```
+## 📁 What Gets Installed
 
-## Configuration Structure
+- **Neovim** - Enhanced Vim with Lua config
+- **Kitty** - Fast terminal emulator
+- **Waybar** - Customizable status bar
+- **Rofi** - Application launcher
+- **Swaync** - Notification daemon
+- **Wlogout** - Logout screen
+- **Wofi** - Alternative launcher
+- **Hyprland** - Modern Wayland compositor
+- **Fastfetch** - System information
+- **Zsh** - Enhanced shell configuration
+- **Wallpapers** - Collection of wallpapers
+
+## 🔄 Updating
+
+```bash
+# Pull latest changes
+git pull origin main
+# Reinstall dotfiles
+make install
+```
+
+## 🗑️ Uninstalling
+
+```bash
+# Remove all dotfiles
+./uninstall.sh
+# Or use make
+make uninstall
+```
+
+## 🚨 Troubleshooting
+
+- **Permission denied**: Run `chmod +x install.sh`
+- **Package conflicts**: Update with `sudo pacman -Sy`
+- **Stow conflicts**: Remove existing configs first
+- **AUR packages fail**: Install yay first: `sudo pacman -S yay`
+
+## 📚 More Information
+
+- Run `./test-install.sh` to verify your setup
+- Use `make help` for available commands
+
+## 📋 Prerequisites
+
+- Arch Linux system
+- `sudo` access
+- Internet connection
+
+## 📚 Configuration Structure
 
 ```
 dotfiles/
@@ -89,9 +118,10 @@ dotfiles/
 ├── zshrc/                # Zsh configuration
 ├── wallpapers/           # Wallpaper collection
 ├── packages/             # Package lists
-│   ├── package-list.txt  # Official packages
-│   └── aur-packages.txt  # AUR packages
+│   ├── pkglist.txt       # Official packages
+│   └── aur-installed.txt # AUR packages
 ├── install.sh            # Installation script
 └── README.md             # This file
 ```
 
+For more detailed documentation, see the individual configuration directories.
