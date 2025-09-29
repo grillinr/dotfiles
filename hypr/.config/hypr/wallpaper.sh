@@ -53,15 +53,15 @@ main() {
   fi
 
   # Apply pywal theme
-  wal -i "$FULL_PATH" -n --cols16
-  swaync-client --reload-css
-  cat ~/.cache/wal/colors-kitty.conf >~/.config/kitty/current-theme.conf
-  pywalfox update
-
-  # Refresh scripts
-  "$SCRIPTSDIR/WallustSwww.sh"
-  sleep 2
-  "$SCRIPTSDIR/Refresh.sh"
+  # wal -i "$FULL_PATH" -n --cols16
+  # swaync-client --reload-css
+  # cat ~/.cache/wal/colors-kitty.conf >~/.config/kitty/current-theme.conf
+  # pywalfox update
+  #
+  # # Refresh scripts
+  # "$SCRIPTSDIR/WallustSwww.sh"
+  # sleep 2
+  # "$SCRIPTSDIR/Refresh.sh"
   echo "Wallpaper and themes updated successfully!"
 }
 
