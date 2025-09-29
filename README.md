@@ -2,6 +2,10 @@
 
 This repository contains my Arch Linux dotfiles with a Gruvbox theme and configuration files, managed using `stow` for easy installation and maintenance.
 
+## Examples
+
+![Desktop example](https://github.com/grillinr/dotfiles/blob/main/pictures/dotfile_example.png)
+
 ## 🚀 Quick Installation
 
 **ALWAYS READ SCRIPTS BEFORE RUNNING ON YOUR SYSTEM**
