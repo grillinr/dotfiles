@@ -1,13 +1,14 @@
-@import url("/home/nathan/.cache/wal/colors-waybar.css");
 * {
   all: unset;
   background-image: none;
   margin: unset;
   padding: unset;
+  color: unset;
 }
 button {
   font-family: "CodeNewRoman Nerd Font Mono";
-  background-color: alpha(@color9, 1);
+  background-color: alpha(#3c3836, 1);
+  color: #ebdbb2;
   border-radius: 5px;
   background-repeat: no-repeat;
   background-position: center;
@@ -55,8 +56,8 @@ button {
 }
 
 button:focus {
-  background-color: alpha(@color5, 1);
-  color: #000000;
+  background-color: alpha(#ebdbb2, 1);
+  color: #3c3836;
   transition: 150ms cubic-bezier(0, 0, 1, 1);
   background-position: center;
 }
