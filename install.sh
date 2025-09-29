@@ -211,7 +211,7 @@ stow_dotfiles() {
   while IFS= read -r -d '' dir; do
     local dir_name=$(basename "$dir")
     case "$dir_name" in
-    ".git" | "packages" | "install.sh" | "INSTALL.md" | "README.md" | ".gitignore")
+    ".git" | "packages" | "install.sh" | "INSTALL.md" | "README.md" | ".gitignore" | "pictures")
       # Skip these directories
       ;;
     *)
