@@ -31,7 +31,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source .config/hypr/obscure-scripts/package_management.sh
+source "$HOME/.config/hypr/obscure-scripts/package_management.sh"
 
 # Set-up icons for files/folders in terminal
 alias ls='eza -1 --icons'

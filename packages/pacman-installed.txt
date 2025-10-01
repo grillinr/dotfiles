@@ -37,6 +37,7 @@ go
 grim
 grub
 gtk-engine-murrine
+gum
 gvfs
 gvfs-mtp
 htop
@@ -84,6 +85,7 @@ networkmanager
 noto-fonts
 noto-fonts-emoji
 npm
+numix-icon-theme-git
 nvtop
 nwg-displays
 nwg-look
@@ -175,7 +177,6 @@ xorg-xinit
 yad
 yay-bin
 yt-dlp
-zen-browser-bin
 zoxide
 zram-generator
 zsh
