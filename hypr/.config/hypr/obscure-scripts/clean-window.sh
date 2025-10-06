@@ -13,6 +13,7 @@ if [ -f "$STATE_FILE" ]; then
   pkill -SIGUSR1 waybar
   hyprctl keyword decoration:inactive_opacity 0.9
   hyprctl keyword decoration:active_opacity 0.97
+  hyprctl keyword general:border_size 2
   hyprctl keyword general:gaps_in "$GAPS_IN"
   hyprctl keyword general:gaps_out "$GAPS_OUT"
   hyprctl keyword decoration:rounding "$ROUNDING"
@@ -32,6 +33,7 @@ else
   pkill -SIGUSR1 waybar
   hyprctl keyword decoration:inactive_opacity 1
   hyprctl keyword decoration:active_opacity 1
+  hyprctl keyword general:border_size 0
   # Disable gaps + rounding
   hyprctl keyword general:gaps_in "0 0 0 0"
   hyprctl keyword general:gaps_out "0 0 0 0"

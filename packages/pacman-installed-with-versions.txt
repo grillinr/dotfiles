@@ -1116,6 +1116,8 @@ sonnet 6.18.0-1
 sord 0.16.18-1
 sound-theme-freedesktop 0.8-6
 spdlog 1.15.3-1
+speedtest++ 1.15.r72.b743996-2
+speedtest++-debug 1.15.r72.b743996-2
 speex 1.2.1-2
 speexdsp 1.2.1-2
 spice 0.16.0-2

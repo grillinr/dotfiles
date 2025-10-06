@@ -127,6 +127,8 @@ sddm
 slurp
 smartmontools
 sof-firmware
+speedtest++
+speedtest++-debug
 spotify
 steam
 stow
