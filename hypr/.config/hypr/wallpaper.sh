@@ -1,10 +1,8 @@
 #!/bin/bash
 # Merged wallpaper script combining WallpaperSelect.sh UI and wallpaper.sh features
-
 # WALLPAPERS DIRECTORY
-WALLPAPER_DIR="$HOME/repos/dotfiles/wallpapers/wallpapers"
+WALLPAPER_DIR="$HOME/repos/dotfiles/wallpapers"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
-
 # Variables
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 FPS=60
@@ -12,10 +10,8 @@ TYPE="any"
 DURATION=0.5
 BEZIER=".43,1.19,1,.4"
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
-
 # Retrieve image files
 mapfile -d '' PICS < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
-
 # Rofi menu
 rofi_command="rofi -i -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
 menu() {
@@ -29,10 +25,8 @@ menu() {
     fi
   done
 }
-
 # Start swww if not running
 swww query || swww-daemon --format xrgb
-
 # Wallpaper selection and application
 main() {
   choice=$(menu | $rofi_command | xargs)
@@ -51,18 +45,15 @@ main() {
       fi
     done
   fi
-
   # Apply pywal theme
-  # wal -i "$FULL_PATH" -n --cols16
-  # swaync-client --reload-css
-  # cat ~/.cache/wal/colors-kitty.conf >~/.config/kitty/current-theme.conf
-  # pywalfox update
-  #
-  # # Refresh scripts
-  # "$SCRIPTSDIR/WallustSwww.sh"
-  # sleep 2
-  # "$SCRIPTSDIR/Refresh.sh"
+  wal -i "$FULL_PATH" -n --cols16
+  swaync-client --reload-css
+  cat ~/.cache/wal/colors-kitty.conf >~/.config/kitty/current-theme.conf
+  pywalfox update
+  # Refresh scripts
+  "$SCRIPTSDIR/WallustSwww.sh"
+  sleep 2
+  "$SCRIPTSDIR/Refresh.sh"
   echo "Wallpaper and themes updated successfully!"
 }
-
 main
