@@ -46,9 +46,11 @@ hyprland
 hyprlock
 hyprls-git
 hyprmon-bin
+hyprpaper
 hyprpicker
 hyprpolkitagent
 hyprshot
+hyprsunset
 imagemagick
 impala
 intel-media-driver
@@ -128,7 +130,6 @@ slurp
 smartmontools
 sof-firmware
 speedtest++
-speedtest++-debug
 spotify
 steam
 stow

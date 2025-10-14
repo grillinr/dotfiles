@@ -2,8 +2,9 @@ background-color=#282828
 text-color=#ebdbb2
 border-color=#d79921
 border-size=2
-default-timeout=10000
-width=500
+border-radius=12
+default-timeout=5000
+width=300
 height=100
 margin=10
 padding=10
@@ -19,7 +20,8 @@ border-color=#98971a
 [urgency=normal]
 background-color=#282828
 text-color=#ebdbb2
-border-color=#d79921
+border-color=#ebdbb2
+
 
 [urgency=high]
 background-color=#282828

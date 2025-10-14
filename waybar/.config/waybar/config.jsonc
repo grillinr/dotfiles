@@ -50,8 +50,9 @@
     "on-click": "kitty sh -c 'cd repos/dotfiles; nvim .'",
     "escape": true,
   },
+
   "clock": {
-    "format": "{:%I:%M%p}",
+    "format": "{:%m/%d/%Y %I:%M %p}",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
