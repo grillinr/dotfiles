@@ -1,5 +1,5 @@
+7zip
 adobe-source-code-pro-fonts
-asciiquarium
 base
 base-devel
 bc
@@ -28,7 +28,6 @@ ffmpegthumbnailer
 firefox
 fuse-overlayfs
 fzf
-ghostty
 git
 github-cli
 gnome-system-monitor
@@ -41,6 +40,7 @@ gum
 gvfs
 gvfs-mtp
 htop
+hyprdvd
 hypridle
 hyprland
 hyprlock
@@ -93,6 +93,7 @@ nwg-displays
 nwg-look
 obsidian
 onefetch
+opencode-bin
 os-prober
 otf-codenewroman-nerd
 otf-font-awesome
@@ -179,6 +180,7 @@ xorg-server
 xorg-xinit
 yad
 yay-bin
+yazi
 yt-dlp
 zoxide
 zram-generator

@@ -44,20 +44,24 @@ tooltip {
 
 #workspaces button {
   all: unset;
-  padding: 0px 5px;
+  padding-top: 0px;
+  padding-right: 4px;
   min-width: 20px; /* Fixed width to prevent jitter */
-  color: alpha(#ebdbb2, 0.5);
+  color: alpha(#ebdbb2, 0.9);
   border: none;
+  font-weight: bold;
   transition: color 0.2s ease; /* Only animate color */
 }
 
 #workspaces button.empty {
-  color: alpha(#ebdbb2, 0.3);
+  color: alpha(#ebdbb2, 0.5);
+  font-weight: normal;
 }
 
 #workspaces button:hover,
 #workspaces button.empty:hover {
   color: alpha(#ebdbb2, 0.7);
+  font-weight: normal;
 }
 
 #workspaces button.active,

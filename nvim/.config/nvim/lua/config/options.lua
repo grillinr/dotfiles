@@ -5,3 +5,5 @@
 -- return {
 --   "ellisonleao/gruvbox.nvim", -- Example theme
 -- }
+
+vim.opt.mouse = "v"
