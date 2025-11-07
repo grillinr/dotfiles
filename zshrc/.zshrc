@@ -41,6 +41,7 @@ alias ll='eza -1l --icons'
 alias lt='eza --tree --level=1 --icons'
 alias cd="z"
 alias grep='grep --color=auto'
+alias lg="lazygit"
 
 # Package management shortcuts
 alias install-man='yay -S'

@@ -2,6 +2,7 @@
 adobe-source-code-pro-fonts
 base
 base-devel
+bat
 bc
 bibata-cursor-theme
 blueman
@@ -151,6 +152,7 @@ ttf-victor-mono
 tumbler
 umockdev
 unzip
+vicinae
 vim
 virtualbox
 virtualbox-guest-iso
