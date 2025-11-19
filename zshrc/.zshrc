@@ -66,6 +66,7 @@ alias diskinfo='df -h'
 alias gqlgen='go run github.com/99designs/gqlgen generate'
 alias about='fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc'
 alias n='nvim .'
+alias oc='opencode'
 
 # Yazi functions
 function y() {
@@ -93,6 +94,15 @@ export EDITOR=nvim
 # Created by `pipx` on 2025-02-04 14:54:31
 export PATH="$PATH:/home/nathan/.local/bin"
 eval "$(zoxide init zsh)"
+eval "$(ssh-agent -s)"
 
 # opencode
 export PATH=/home/nathan/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/nathan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

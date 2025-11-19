@@ -12,6 +12,7 @@ bluez-utils
 brightnessctl
 btop
 cava
+chafa
 chromium
 cliphist
 cloudflared
@@ -25,6 +26,7 @@ evtest
 eza
 fastfetch
 fd
+feh
 ffmpegthumbnailer
 firefox
 fuse-overlayfs
@@ -124,6 +126,7 @@ qt5ct
 qt6-virtualkeyboard
 qt6-wayland
 qt6ct
+quick-mouse
 r
 rofi
 rust-analyzer
@@ -135,6 +138,7 @@ speedtest++
 spotify
 steam
 stow
+stylua
 swappy
 swaync
 swww
@@ -150,6 +154,7 @@ ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-victor-mono
 tumbler
+ueberzugpp
 umockdev
 unzip
 vicinae
@@ -158,6 +163,7 @@ virtualbox
 virtualbox-guest-iso
 virtualbox-host-modules-arch
 visual-studio-code-bin
+viu
 vulkan-intel
 vulkan-nouveau
 vulkan-radeon
@@ -184,6 +190,7 @@ yad
 yay-bin
 yazi
 yt-dlp
+zathura
 zoxide
 zram-generator
 zsh
