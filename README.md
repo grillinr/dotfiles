@@ -6,15 +6,15 @@ This repository contains my Arch Linux dotfiles with a Gruvbox theme and configu
 
 ![Desktop example](https://github.com/grillinr/dotfiles/blob/main/pictures/dotfile_example.png)
 
-## 🚀 Quick Installation
+## Quick Installation
 
 **ALWAYS READ SCRIPTS BEFORE RUNNING ON YOUR SYSTEM**
 
 ```bash
-curl -fsSL https://github.com/grillinr/dotfiles/raw/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/grillinr/dotfiles/main/install.sh | bash
 ```
 
-## 🛠️ Installation
+## Installation
 
 ### Automatic Installation (Recommended)
 The installation script will automatically:
@@ -43,7 +43,7 @@ sudo pacman -S stow
 2. **Log out and back in** for Hyprland changes
 3. **Restart applications** for config changes
 
-## ✨ Features
+## Features
 
 - **Window Manager**: Hyprland with custom configuration
 - **Status Bar**: Waybar with custom modules
@@ -57,7 +57,7 @@ sudo pacman -S stow
 - **Browser**: Firefox, Zen Browser
 - **System Monitor**: Btop, Htop
 
-## 📁 What Gets Installed
+## What Gets Installed
 
 - **Neovim** - Enhanced Vim with Lua config
 - **Kitty** - Fast terminal emulator
@@ -71,43 +71,34 @@ sudo pacman -S stow
 - **Zsh** - Enhanced shell configuration
 - **Wallpapers** - Collection of wallpapers
 
-## 🔄 Updating
+## Updating
 
 ```bash
 # Pull latest changes
 git pull origin main
 # Reinstall dotfiles
-make install
+./install.sh
 ```
 
-## 🗑️ Uninstalling
-
-```bash
-# Remove all dotfiles
-./uninstall.sh
-# Or use make
-make uninstall
-```
-
-## 🚨 Troubleshooting
+## Troubleshooting
 
 - **Permission denied**: Run `chmod +x install.sh`
 - **Package conflicts**: Update with `sudo pacman -Sy`
 - **Stow conflicts**: Remove existing configs first
 - **AUR packages fail**: Install yay first: `sudo pacman -S yay`
 
-## 📚 More Information
+## More Information
 
 - Run `./test-install.sh` to verify your setup
 - Use `make help` for available commands
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Arch Linux system
 - `sudo` access
 - Internet connection
 
-## 📚 Configuration Structure
+## Configuration Structure
 
 ```
 dotfiles/
