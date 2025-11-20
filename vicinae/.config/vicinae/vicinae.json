@@ -1,0 +1,24 @@
+{
+    "closeOnFocusLoss": false,
+    "considerPreedit": false,
+    "faviconService": "twenty",
+    "font": {
+        "normal": "JetBrains Mono",
+        "size": 12
+    },
+    "keybinding": "default",
+    "keybinds": {
+    },
+    "popToRootOnClose": true,
+    "rootSearch": {
+        "searchFiles": false
+    },
+    "theme": {
+        "name": "gruvbox-dark"
+    },
+    "window": {
+        "csd": true,
+        "opacity": 0.98,
+        "rounding": 10
+    }
+}

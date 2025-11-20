@@ -117,6 +117,7 @@ python-pywal16
 python-pywalfox
 python-requests
 python-scikit-learn
+python-torch-geometric
 python-torchaudio
 python-torchvision
 qalculate-gtk
