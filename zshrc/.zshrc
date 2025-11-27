@@ -94,7 +94,7 @@ export EDITOR=nvim
 # Created by `pipx` on 2025-02-04 14:54:31
 export PATH="$PATH:/home/nathan/.local/bin"
 eval "$(zoxide init zsh)"
-eval "$(ssh-agent -s)"
+# eval "$(ssh-agent -s)"
 
 # opencode
 export PATH=/home/nathan/.opencode/bin:$PATH
