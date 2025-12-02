@@ -1,5 +1,6 @@
 7zip
 adobe-source-code-pro-fonts
+adw-gtk-theme-git
 alsa-utils
 base
 base-devel
@@ -10,6 +11,8 @@ blueman
 bluetui
 bluez
 bluez-utils
+breeze
+breeze-plus
 brightnessctl
 btop
 cava
@@ -18,6 +21,7 @@ chromium
 cliphist
 cloudflared
 cursor-bin
+ddcutil
 discord
 docker
 docker-compose
@@ -32,11 +36,13 @@ ffmpegthumbnailer
 firefox
 fuse-overlayfs
 fzf
+geoclue
 git
 github-cli
 gnome-system-monitor
 gnu-netcat
 go
+go-yq
 grim
 grub
 gtk-engine-murrine
@@ -78,6 +84,7 @@ lsd
 luarocks
 mako
 man-db
+matugen
 mercurial
 mousepad
 mpv
@@ -104,6 +111,7 @@ otf-font-awesome
 pacman-contrib
 pamixer
 pavucontrol
+pavucontrol-qt
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
@@ -129,6 +137,7 @@ qt6-virtualkeyboard
 qt6-wayland
 qt6ct
 quick-mouse
+quickshell
 r
 rofi
 rust-analyzer
@@ -159,6 +168,7 @@ tumbler
 ueberzugpp
 umockdev
 unzip
+uv
 vicinae
 vim
 virtualbox
