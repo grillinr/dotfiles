@@ -14,9 +14,13 @@
     "cpu",
     "memory",
     "temperature",
+    "custom/pipe",
     "bluetooth",
-    "network",
+    "custom/pipe",
     "pulseaudio",
+    "custom/pipe",
+    "network",
+    "custom/pipe",
     "battery",
   ],
 
@@ -79,8 +83,7 @@
     "format-on": "󰂯",
     "format-off": "BT-off",
     "format-disabled": "󰂲",
-    "format-connected-battery": "{device_battery_percentage}% 󰂯",
-    "format-alt": "{device_alias} 󰂯",
+    "format-connected-battery": "{device_alias} {device_battery_percentage}% 󰂯",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
@@ -89,7 +92,7 @@
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% 󰂯",
+    "format-bluetooth": "{volume}% 󰋋",
     "format-muted": "󰝟",
     "format-icons": {
       "headphone": "󰋋",
@@ -97,7 +100,6 @@
       "headset": "󰋎",
       "phone": "󰏲",
       "portable": "󰄝",
-      "car": "󰄋",
       "default": ["󰕿", "󰖀", "󰕾"],
     },
     "scroll-step": 1,
@@ -133,6 +135,9 @@
     "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
     "on-click": "~/.config/waybar/scripts/colorpicker.sh",
     "signal": 1,
+  },
+  "custom/pipe": {
+    "format": "|",
   },
   "cpu": {
     "format": "󰻠",

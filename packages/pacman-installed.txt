@@ -178,6 +178,7 @@ virtualbox-guest-iso
 virtualbox-host-modules-arch
 visual-studio-code-bin
 viu
+vivaldi
 vulkan-intel
 vulkan-nouveau
 vulkan-radeon

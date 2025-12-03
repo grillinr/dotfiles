@@ -1267,6 +1267,7 @@ virtualbox-guest-iso 7.2.4-1
 virtualbox-host-modules-arch 7.2.4-7
 visual-studio-code-bin 1.106.3-1
 viu 1.5.1-1
+vivaldi 7.7.3851.56-1
 vlc 3.0.21-32
 vlc-cli 3.0.21-32
 vlc-gui-qt 3.0.21-32

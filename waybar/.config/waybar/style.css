@@ -9,8 +9,9 @@ window#waybar {
 }
 
 tooltip {
-  background: #272727;
+  background: #3c3836;
   color: #ebdbb2;
+  border: 1.5px solid #ebdbb2;
 }
 
 /* Module Containers */
@@ -70,17 +71,23 @@ tooltip {
 }
 
 /* Basic Modules */
+
 #clock,
 #pulseaudio,
 #custom-pacman,
 #custom-notification,
 #bluetooth,
-#network,
 #battery,
 #cpu,
 #memory,
 #temperature {
   padding: 0px 5px;
+  color: #ebdbb2;
+  transition: color 0.3s ease; /* Only animate color */
+}
+
+#network {
+  padding: 0 0 0 9;
   color: #ebdbb2;
   transition: color 0.3s ease; /* Only animate color */
 }
@@ -104,19 +111,19 @@ tooltip {
 
 /* Battery States */
 #battery.charging {
-  color: #26a65b;
+  color: #689d69;
   background-color: transparent;
   text-decoration: none;
 }
 
 #battery.warning:not(.charging) {
-  color: #ffbe61;
+  color: #d79920;
   background-color: transparent;
   text-decoration: none;
 }
 
 #battery.critical:not(.charging) {
-  color: #e34e25;
+  color: #cc231c;
   background-color: transparent;
   text-decoration: none;
   animation: blink 1s linear infinite alternate;
@@ -150,7 +157,7 @@ tooltip {
   text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
 }
 
-#custom-endpoint {
+#custom-pipe {
   color: #ebdbb2;
 }
 

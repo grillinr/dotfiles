@@ -1,18 +1,19 @@
 [Default Applications]
 inode/directory=yazi.desktop
-application/x-wayland-gnome-saved-search=thunar.desktop
-x-scheme-handler/http=brave-browser.desktop
-x-scheme-handler/https=brave-browser.desktop
+application/x-wayland-gnome-saved-search=yazi.desktop
+x-directory/normal=yazi.desktop;
+x-scheme-handler/http=vivaldi-stable.desktop
+x-scheme-handler/https=vivaldi-stable.desktop
 x-scheme-handler/chrome=firefox.desktop
-text/html=brave-browser.desktop
+text/html=vivaldi-stable.desktop
 application/x-extension-htm=firefox.desktop
 application/x-extension-html=firefox.desktop
 application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
-x-scheme-handler/about=brave-browser.desktop
-x-scheme-handler/unknown=brave-browser.desktop
+x-scheme-handler/about=vivaldi-stable.desktop
+x-scheme-handler/unknown=vivaldi-stable.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;zen.desktop;
