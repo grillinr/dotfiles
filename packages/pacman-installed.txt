@@ -11,6 +11,7 @@ blueman
 bluetui
 bluez
 bluez-utils
+brave-bin
 breeze
 breeze-plus
 brightnessctl
@@ -20,7 +21,6 @@ chafa
 chromium
 cliphist
 cloudflared
-cursor-bin
 ddcutil
 discord
 docker
@@ -98,6 +98,7 @@ networkmanager
 noto-fonts
 noto-fonts-emoji
 npm
+ntfs-3g
 numix-icon-theme-git
 nvtop
 nwg-displays
@@ -116,6 +117,7 @@ pipewire-alsa
 pipewire-audio
 pipewire-pulse
 playerctl
+polkit-gnome
 polkit-kde-agent
 pyprland
 python-pandas
@@ -182,7 +184,6 @@ vulkan-radeon
 wallust
 waybar
 wget
-windsurf
 wireless_tools
 wireplumber
 wlogout

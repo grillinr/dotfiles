@@ -1,10 +1,10 @@
 [1m[33m -> [0m[0mAvoid running yay as root/sudo.
 adw-gtk-theme-git 6.4.r1.g2eb9b06-1
 bibata-cursor-theme 2.0.7-1
+brave-bin 1:1.84.141-1
 breeze-plus 6.2.5-1
 bun-bin 1.3.3-1
 bun-bin-debug 1.3.3-1
-cursor-bin 2.1.44-1
 elephant-debug 1.0.7-1
 elephant-desktopapplications-debug 1.0.7-1
 elephant-providerlist-debug 1.0.7-1
@@ -21,7 +21,7 @@ hyprmon-bin-debug 0.0.12-1
 ncpamixer 1.3.10-1
 ncpamixer-debug 1.3.10-1
 numix-icon-theme-git 25.01.31.r0.ga6e6bf9f1-1
-opencode-bin 1.0.126-1
+opencode-bin 1.0.128-1
 pyprland 2.4.7-0
 pyprland-debug 2.4.7-0
 python-clickgen 2.2.5-1
@@ -42,7 +42,6 @@ visual-studio-code-bin 1.106.3-1
 walker-debug 1.0.7-2
 wallust 3.4.0-1
 wallust-debug 3.4.0-1
-windsurf 1.12.36-1
 wlogout 1.2.2-0
 wlogout-debug 1.2.2-0
 xf86-video-vmware 13.4.0-4
