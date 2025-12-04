@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Microsoft Word
+Exec=brave --app="https://word.cloud.microsoft/"
+Icon=word
+Type=Application
+Categories=Utilities;Mircrosoft;
+StartupNotify=true

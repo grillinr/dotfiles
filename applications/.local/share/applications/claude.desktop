@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Claude
+Exec=brave --app="https://www.claude.ai"
+Icon=claude
+Type=Application
+Categories=Utilities;Network;
+StartupNotify=true

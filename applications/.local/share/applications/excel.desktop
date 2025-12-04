@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Microsoft Excel
+Exec=brave --app="https://excel.cloud.microsoft/"
+Icon=excel
+Type=Application
+Categories=Utilities;Mircrosoft;
+StartupNotify=true

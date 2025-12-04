@@ -31,7 +31,7 @@ window {
     border: 2px solid;
     border-color: @foreground;
     location: center;
-    width: 20%;        /* from 1080p config (overrides 50%) */
+    width: 30%;        /* from 1080p config (overrides 50%) */
     background-color: @background;
 }
 

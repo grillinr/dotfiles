@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=OneDrive
+Exec=brave --app="https://mailuc-my.sharepoint.com/"
+Icon=onedrive
+Type=Application
+Categories=Utilities;Mircrosoft;
+StartupNotify=true

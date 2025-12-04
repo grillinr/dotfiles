@@ -73,7 +73,6 @@ cblas 3.12.1-2
 cdparanoia 10.2-9
 cfitsio 1:4.6.3-1
 chafa 1.16.2-1
-chromium 142.0.7444.175-1
 cifs-utils 7.4-1
 cli11 2.6.1-1
 cliphist 1:0.7.0-1

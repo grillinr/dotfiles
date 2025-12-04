@@ -1,4 +1,5 @@
 [SddmGreeterTheme]
+# Put this file in /usr/share/sddm/themes/sddm-astronaut-theme
 Name=gruvbox
 Description=sddm-astronaut-theme
 Author=keyitdev

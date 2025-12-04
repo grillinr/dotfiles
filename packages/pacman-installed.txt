@@ -18,7 +18,6 @@ brightnessctl
 btop
 cava
 chafa
-chromium
 cliphist
 cloudflared
 ddcutil

@@ -6,6 +6,7 @@
   "modules-left": [
     "custom/notification",
     "custom/pacman",
+    "group/tray-drawer",
     "hyprland/workspaces",
   ],
   "modules-center": ["clock"],
@@ -164,7 +165,21 @@
     "on-click": "kitty sh -c btop",
   },
   "tray": {
-    "icon-size": 16,
-    "spacing": 10,
+    "spacing": 8, // Recommended to add spacing here for visual separation
+  },
+  "custom/tray-icon": {
+    "format": "󰹯",
+    "tooltip": false,
+  },
+
+  "group/tray-drawer": {
+    "orientation": "horizontal",
+    "modules": ["custom/tray-icon", "tray"],
+    "drawer": {
+      "transition-duration": 200,
+      "transition-left-to-right": true,
+      "click-to-reveal": true, // ADDED: This makes it open on click
+      "hide-on-scroll": false,
+    },
   },
 }
