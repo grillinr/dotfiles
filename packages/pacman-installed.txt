@@ -66,6 +66,7 @@ impala
 intel-media-driver
 intel-ucode
 inxi
+isoimagewriter
 iwd
 jq
 keyd

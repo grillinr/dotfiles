@@ -47,7 +47,6 @@ alias lg="lazygit"
 alias install-man='yay -S'
 alias uninstall-man='yay -Rns'
 alias pacup='sudo pacman -Rns $(pacman -Qdtq)'
-alias update="yay; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read; pkill -SIGRTMIN+8 waybar"
 
 # Directory shortcuts
 alias hypr='cd /home/nathan/.config/hypr; nvim .'

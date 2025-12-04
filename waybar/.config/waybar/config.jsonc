@@ -124,7 +124,7 @@
     "interval": 300,
     "exec": "checkupdates | wc -l",
     "exec-if": "exit 0",
-    "on-click": "kitty sh -c 'yay; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+    "on-click": "kitty sh -c 'yay --noconfirm --needed; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
     "signal": 8,
     "tooltip": false,
   },

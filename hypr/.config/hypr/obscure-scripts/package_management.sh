@@ -11,7 +11,7 @@ install() {
 
     if (( ${#packages[@]} )); then
         echo "Installing: ${packages[@]}"
-        yay -S -- "${packages[@]}"
+        yay -S -- "${packages[@]} --noconfirm --needed"
     fi
 }
 
@@ -64,4 +64,10 @@ search() {
         fzf --preview 'yay -Si {}' \
             --preview-window=right:60%:wrap \
             --header='Browse packages (Esc to quit, Enter shows details)'
+}
+
+# Update
+update() {
+    echo "Checking for updates..."
+    yay --noconfirm --needed; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read; pkill -SIGRTMIN+8 waybar
 }
