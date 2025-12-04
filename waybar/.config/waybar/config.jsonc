@@ -19,6 +19,8 @@
     "custom/pipe",
     "pulseaudio",
     "custom/pipe",
+    "backlight",
+    "custom/pipe",
     "network",
     "custom/pipe",
     "battery",
@@ -104,6 +106,14 @@
     },
     "scroll-step": 1,
     "on-click": "kitty sh -c ncpamixer",
+    "tooltip": false,
+  },
+  "backlight": {
+    "format": "󰃟 {percent}%",
+    "on-click": "brightnessctl set 10%+",
+    "on-click-right": "brightnessctl set 10%-",
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
     "tooltip": false,
   },
   "battery": {

@@ -33,12 +33,12 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.config/hypr/obscure-scripts/package_management.sh"
 
-# Replace built in sheels commands
-alias ls='eza -1 --icons'
-alias la='eza -1a --icons'
-alias lla='eza -1la --icons'
-alias ll='eza -1l --icons'
-alias lt='eza --tree --level=1 --icons'
+# Replace built in shells commands
+alias ls='eza -G --icons'
+alias lsa='eza -Ga --icons'
+alias lsla='eza -1la --icons'
+alias lsl='eza -Gl --icons'
+alias lst='eza --tree --level=1 --icons'
 alias cd="z"
 alias grep='grep --color=auto'
 alias lg="lazygit"

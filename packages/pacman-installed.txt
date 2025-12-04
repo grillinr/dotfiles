@@ -25,7 +25,6 @@ ddcutil
 discord
 docker
 docker-compose
-dolphin
 efibootmgr
 evtest
 eza
@@ -136,11 +135,12 @@ qalculate-gtk
 qemu-full
 qt5-wayland
 qt5ct
+qt6-positioning
 qt6-virtualkeyboard
 qt6-wayland
 qt6ct
 quick-mouse
-quickshell
+quickshell-git
 r
 rofi
 rust-analyzer
@@ -179,7 +179,6 @@ virtualbox-guest-iso
 virtualbox-host-modules-arch
 visual-studio-code-bin
 viu
-vivaldi
 vulkan-intel
 vulkan-nouveau
 vulkan-radeon

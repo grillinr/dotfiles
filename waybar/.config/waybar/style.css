@@ -60,8 +60,9 @@ tooltip {
 }
 
 #workspaces button:hover,
-#workspaces button.empty:hover {
-  color: alpha(#ebdbb2, 0.7);
+#workspaces button.empty:hover,
+#workspaces button.active:hover {
+  color: alpha(#458488, 0.7);
   font-weight: normal;
 }
 
@@ -80,6 +81,7 @@ tooltip {
 #battery,
 #cpu,
 #memory,
+#backlight,
 #temperature {
   padding: 0px 5px;
   color: #ebdbb2;
@@ -100,9 +102,10 @@ tooltip {
 #network:hover,
 #battery:hover,
 #cpu:hover,
+#backlight:hover,
 #memory:hover,
 #temperature:hover {
-  color: @color9;
+  color: #448488;
 }
 
 #pulseaudio {
