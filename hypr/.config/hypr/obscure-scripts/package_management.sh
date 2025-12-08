@@ -3,15 +3,18 @@
 # Fuzzy find and install packages (AUR + official repos)
 install() {
     local packages
-    packages=("${(@f)$(yay -Slq --sortby name | \
+    # Get list of packages from yay, sort them, and select with fzf
+    packages=($(yay -Slq | sort | \
         fzf --preview 'yay -Si {}' \
             --preview-window=right:60%:wrap \
             --header='Select package to install (Tab for multi-select)' \
-            --multi)}")
+            --multi))
 
     if (( ${#packages[@]} )); then
-        echo "Installing: ${packages[@]}"
-        yay -S -- "${packages[@]} --noconfirm --needed"
+        echo "Installing: ${packages[*]}"
+        yay -S --noconfirm --needed -- "${packages[@]}"
+    else
+        echo "No packages selected."
     fi
 }
 
