@@ -11,13 +11,13 @@ blueman
 bluetui
 bluez
 bluez-utils
-brave-bin
 breeze
 breeze-plus
 brightnessctl
 btop
 cava
 chafa
+chromium
 cliphist
 cloudflared
 ddcutil
@@ -139,7 +139,6 @@ qt6-virtualkeyboard
 qt6-wayland
 qt6ct
 quick-mouse
-quickshell-git
 r
 rofi
 rust-analyzer
@@ -204,6 +203,7 @@ yay-bin
 yazi
 yt-dlp
 zathura
+zen-browser-bin
 zoxide
 zram-generator
 zsh

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Microsoft Word
-Exec=brave --app="https://word.cloud.microsoft/"
+Exec=chromium --app="https://word.cloud.microsoft/"
 Icon=word
 Type=Application
 Categories=Utilities;Mircrosoft;

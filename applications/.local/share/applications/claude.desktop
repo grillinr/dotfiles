@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Claude
-Exec=brave --app="https://www.claude.ai"
+Exec=chromium --app="https://www.claude.ai"
 Icon=claude
 Type=Application
 Categories=Utilities;Network;

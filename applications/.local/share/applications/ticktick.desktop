@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=TickTick
-Exec=brave --app="https://ticktick.com/webapp/#q/all/tasks"
+Exec=chromium --app="https://ticktick.com/webapp/#q/all/tasks"
 Icon=ticktick
 Type=Application
 Categories=Utilities;Network;

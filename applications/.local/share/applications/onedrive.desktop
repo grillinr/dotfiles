@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=OneDrive
-Exec=brave --app="https://mailuc-my.sharepoint.com/"
+Exec=chromium --app="https://mailuc-my.sharepoint.com/"
 Icon=onedrive
 Type=Application
 Categories=Utilities;Mircrosoft;

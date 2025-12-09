@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Microsoft Excel
-Exec=brave --app="https://excel.cloud.microsoft/"
+Exec=chromium --app="https://excel.cloud.microsoft/"
 Icon=excel
 Type=Application
 Categories=Utilities;Mircrosoft;

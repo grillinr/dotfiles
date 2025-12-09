@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=ChatGPT
-Exec=brave --app="https://www.chatgpt.com"
+Exec=chromium --app="https://www.chatgpt.com"
 Icon=chatgpt
 Type=Application
 Categories=Utilities;Network;
