@@ -2,42 +2,40 @@
 * {
   font-size: 15px;
   font-family: "CodeNewRoman Nerd Font Propo";
-  border: none;
-  border-radius: 20px;
 }
 
 window#waybar {
-  background: transparent;
+  all: unset;
 }
 
-/* Tooltips */
 tooltip {
-  background: rgba(30, 30, 30, 0.75);
+  background: #3c3836;
   color: #ebdbb2;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid #ebdbb2;
 }
 
 /* Module Containers */
 .modules-left,
 .modules-center,
 .modules-right {
-  padding: 5px 10px;
-  margin: 6px 4px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+  border: 1.5px solid #ebdbb2;
+  background: #3c3836;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+}
 
-  /* Transparent background allows Hyprland to blur behind it */
-  background: rgba(20, 20, 20, 0.4);
+.modules-left {
+  margin: 5px 0 5px 5px;
+}
 
-  /* The "Liquid" sheen - White highlights top/left, shadows bottom/right */
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+.modules-center {
+  margin: 5px 0 5px 0;
+}
 
-  /* Inner glow to make it look 3D/Wet */
-  box-shadow:
-    inset 0 0 15px rgba(255, 255, 255, 0.05),
-    0 4px 10px rgba(0, 0, 0, 0.2);
+.modules-right {
+  margin: 5px 5px 5px 0;
 }
 
 /* Workspaces */
@@ -46,38 +44,35 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 0px 6px;
-  margin: 0px 2px;
-  color: rgba(235, 219, 178, 0.6);
-  background: transparent;
-  transition: all 0.3s ease;
-  box-shadow: none;
-  text-shadow: none;
-}
-
-/* Hover State */
-#workspaces button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ebdbb2;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Active State */
-#workspaces button.active {
-  color: #ebdbb2;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow:
-    inset 0 0 10px rgba(255, 255, 255, 0.1),
-    0 0 8px rgba(255, 255, 255, 0.1);
-  text-shadow: 0 0 5px rgba(235, 219, 178, 0.8);
-  min-width: 30px;
+  all: unset;
+  padding-top: 0px;
+  padding-right: 4px;
+  min-width: 20px; /* Fixed width to prevent jitter */
+  color: alpha(#ebdbb2, 0.9);
+  border: none;
+  font-weight: bold;
+  transition: color 0.2s ease; /* Only animate color */
 }
 
 #workspaces button.empty {
-  color: rgba(235, 219, 178, 0.3);
+  color: alpha(#ebdbb2, 0.5);
+  font-weight: normal;
+}
+
+#workspaces button:hover,
+#workspaces button.empty:hover,
+#workspaces button.active:hover {
+  color: alpha(#458488, 0.7);
+  font-weight: normal;
+}
+
+#workspaces button.active,
+#workspaces button.empty.active {
+  color: #ebdbb2;
 }
 
 /* Basic Modules */
+
 #clock,
 #pulseaudio,
 #custom-pacman,
@@ -88,15 +83,18 @@ tooltip {
 #cpu,
 #memory,
 #backlight,
-#temperature,
-#network {
-  padding: 0px 8px;
+#temperature {
+  padding: 0px 5px;
   color: #ebdbb2;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease; /* Only animate color */
 }
 
-/* Hover effects - Neon Glow */
+#network {
+  padding: 0 0 0 9;
+  color: #ebdbb2;
+  transition: color 0.3s ease; /* Only animate color */
+}
+
 #clock:hover,
 #pulseaudio:hover,
 #custom-pacman:hover,
@@ -109,61 +107,68 @@ tooltip {
 #backlight:hover,
 #memory:hover,
 #temperature:hover {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(69, 133, 136, 0.8);
+  color: #448488;
+}
+
+#pulseaudio {
+  padding: 0px 0px;
 }
 
 /* Battery States */
 #battery.charging {
   color: #689d69;
-  text-shadow: 0 0 8px rgba(104, 157, 105, 0.6);
+  background-color: transparent;
+  text-decoration: none;
 }
 
 #battery.warning:not(.charging) {
   color: #d79920;
-  text-shadow: 0 0 8px rgba(215, 153, 33, 0.6);
+  background-color: transparent;
+  text-decoration: none;
 }
 
 #battery.critical:not(.charging) {
   color: #cc231c;
-  text-shadow: 0 0 10px rgba(204, 36, 29, 0.8);
-  animation: pulse 1.5s infinite alternate;
+  background-color: transparent;
+  text-decoration: none;
+  animation: blink 1s linear infinite alternate;
 }
 
-@keyframes pulse {
+@keyframes blink {
   from {
-    text-shadow: 0 0 10px rgba(204, 36, 29, 0.8);
     opacity: 1;
   }
   to {
-    text-shadow: 0 0 2px rgba(204, 36, 29, 0.2);
-    opacity: 0.7;
+    opacity: 0.75;
   }
 }
 
-/* Custom Modules & Separators */
-#custom-expand,
-#custom-pipe {
-  color: rgba(235, 219, 178, 0.5);
-  text-shadow: none;
+/* Custom Modules */
+#group-expand,
+#custom-colorpicker,
+#tray {
+  padding: 0px 5px;
+  transition: color 0.3s ease; /* Only animate color */
+}
+
+#custom-expand {
+  padding: 0px 5px;
+  color: #ebdbb2;
+  transition: color 0.3s ease; /* Only animate color */
 }
 
 #custom-expand:hover {
+  color: rgba(255, 255, 255, 0.2);
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+}
+
+#custom-pipe {
   color: #ebdbb2;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
 }
 
-/* Tray */
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: rgba(204, 36, 29, 0.2);
-}
-
-#tray menu {
-  background: rgba(30, 30, 30, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Tray Menu */
+#tray menu *,
+#tray menu separator {
+  padding: 0px 5px;
+  transition: color 0.3s ease; /* Only animate color */
 }
