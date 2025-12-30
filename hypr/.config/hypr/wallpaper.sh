@@ -1,92 +1,122 @@
 #!/bin/bash
-# Wallpaper selector using Hyprpaper + Hyprlock sync
+# Wallpaper selector for Hyprpaper v0.8.0+
+# Dependencies: hyprland, hyprpaper, rofi (or rofi-wayland), jq, sed
 
 # --- CONFIG ---
 WALLPAPER_DIR="$HOME/repos/dotfiles/wallpapers"
-SCRIPTSDIR="$HOME/.config/hypr/scripts"
 CONFIG_FILE="$HOME/.config/hypr/hyprpaper.conf"
 HYPRLOCK_CONF="$HOME/.config/hypr/hyprlock.conf"
 CACHE_FILE="$HOME/.cache/current_wallpaper"
 
-# --- GET MONITOR INFO ---
-focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+# --- CHECK DEPENDENCIES ---
+for cmd in jq rofi hyprctl hyprpaper; do
+  if ! command -v $cmd &>/dev/null; then
+    echo "Error: $cmd is not installed."
+    exit 1
+  fi
+done
+
+# --- FORCE RESTART HYPRPAPER (Fixes 'Unknown hyprpaper request') ---
+# If hyprpaper is running, we check if it responds. If errors occur, we kill it.
+if pgrep -x "hyprpaper" >/dev/null; then
+  # Optional: You can force kill it every time to ensure fresh state,
+  # or just let the script run. For now, let's assume it needs a restart
+  # if you just updated.
+  echo "Restarting hyprpaper to ensure version match..."
+  killall hyprpaper
+  sleep 1
+fi
+
+# Start hyprpaper if not running
+if ! pgrep -x "hyprpaper" >/dev/null; then
+  hyprpaper &
+  sleep 1
+fi
+
+# --- GET FOCUSED MONITOR ---
+focused_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
+if [[ -z "$focused_monitor" ]]; then
+  echo "Error: Could not detect focused monitor."
+  exit 1
+fi
 
 # --- LOAD WALLPAPERS ---
-mapfile -d '' PICS < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
+mapfile -d '' PICS < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -print0)
 
 # --- ROFI MENU ---
-rofi_command="rofi -i -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
+rofi_command="rofi -dmenu -i -show -config ~/.config/rofi/config-wallpaper.rasi"
+
 menu() {
   IFS=$'\n' sorted_options=($(sort <<<"${PICS[*]}"))
   for pic_path in "${sorted_options[@]}"; do
     pic_name=$(basename "$pic_path")
-    printf "%s\x00icon\x1f%s\n" "$(echo "$pic_name" | cut -d. -f1)" "$pic_path"
+    printf "%s\x00icon\x1f%s\n" "${pic_name%.*}" "$pic_path"
   done
 }
-
-# --- START HYPRPAPER IF NEEDED ---
-if ! pgrep -x "hyprpaper" >/dev/null; then
-  echo "Starting hyprpaper..."
-  hyprpaper &
-  sleep 0.5
-fi
 
 # --- APPLY WALLPAPER ---
 set_wallpaper() {
   local wp="$1"
-  echo "Setting wallpaper for monitor: $focused_monitor -> $wp"
+  local mon="$2"
 
-  # Update hyprpaper
+  echo "Setting wallpaper :: Monitor: $mon :: Image: $wp"
+
+  # 1. Runtime Change (IPC)
+  # Syntax: hyprctl hyprpaper command "arg1,arg2"
+
+  # Preload
   hyprctl hyprpaper preload "$wp"
-  hyprctl hyprpaper wallpaper "$focused_monitor,$wp"
+
+  # Wallpaper: COMMAS REQUIRED.
+  # "monitor,path"
+  hyprctl hyprpaper wallpaper "$mon,$wp"
+
+  # Unload unused
   hyprctl hyprpaper unload unused
 
-  # Update hyprpaper.conf for persistence
+  # 2. Persistence (hyprpaper.conf)
   if [[ -f "$CONFIG_FILE" ]]; then
-    sed -i "/preload =/d" "$CONFIG_FILE"
-    sed -i "/wallpaper = $focused_monitor/d" "$CONFIG_FILE"
+    if ! grep -qF "preload = $wp" "$CONFIG_FILE"; then
+      echo "preload = $wp" >>"$CONFIG_FILE"
+    fi
+    sed -i "\,^wallpaper = $mon,d" "$CONFIG_FILE"
+    echo "wallpaper = $mon,$wp" >>"$CONFIG_FILE"
+  else
+    {
+      echo "ipc = on"
+      echo "splash = false"
+      echo "preload = $wp"
+      echo "wallpaper = $mon,$wp"
+    } >"$CONFIG_FILE"
   fi
-  {
-    echo "preload = $wp"
-    echo "wallpaper = $focused_monitor,$wp"
-  } >>"$CONFIG_FILE"
 
-  # Cache the current wallpaper
+  # 3. Cache & Hyprlock Sync
   echo "$wp" >"$CACHE_FILE"
   export CURRENT_WALLPAPER="$wp"
 
-  # --- SYNC WITH HYPRLOCK ---
   if [[ -f "$HYPRLOCK_CONF" ]]; then
-    if grep -q "path =" "$HYPRLOCK_CONF"; then
-      sed -i "s|path = .*|path = $wp|" "$HYPRLOCK_CONF"
-    else
-      sed -i "/^background {/a\    path = $wp" "$HYPRLOCK_CONF"
-    fi
-    echo "Hyprlock background updated."
-  else
-    echo "Warning: Hyprlock config not found at $HYPRLOCK_CONF"
+    sed -i "s|path[[:space:]]*=[[:space:]]*.*|path = $wp|" "$HYPRLOCK_CONF"
+    echo "Hyprlock config updated."
   fi
-
-  echo "Wallpaper applied successfully!"
 }
 
 # --- MAIN EXECUTION ---
 main() {
-  choice=$(menu | $rofi_command | xargs)
+  choice=$(menu | $rofi_command)
+
   if [[ -z "$choice" ]]; then
-    echo "No wallpaper selected. Exiting."
+    echo "No wallpaper selected."
     exit 0
   fi
 
   for pic in "${PICS[@]}"; do
-    if [[ "$(basename "$pic")" == "$choice"* ]]; then
-      set_wallpaper "$pic"
+    filename=$(basename "$pic")
+    filename_no_ext="${filename%.*}"
+    if [[ "$filename_no_ext" == "$choice" ]]; then
+      set_wallpaper "$pic" "$focused_monitor"
       break
     fi
   done
-
-  # Optional: sync theme colors with pywal
-  # wal -i "$CURRENT_WALLPAPER" -n --cols16
 }
 
 main
