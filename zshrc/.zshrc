@@ -53,6 +53,7 @@ alias hypr='cd /home/nathan/.config/hypr; nvim .'
 alias school='cd /home/nathan/repos/school/25FS/'
 alias nq='cd /home/nathan/repos/nq; nvim .'
 alias start-nq='npx concurrently --names "backend,frontend"  "cd ~/repos/nq/backend && go run ." "cd ~/repos/nq/nq-frontend && npm start"'
+alias startnq='npx concurrently --names backend,frontend "cd ~/repos/nq/backend && go run ." "cd ~/repos/nq/nq-frontend && npx expo start --tunnel"'
 
 # Helphul commands
 alias pool='clear && asciiquarium'
@@ -105,3 +106,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export PATH="$HOME/.npm-global/bin:$PATH"
