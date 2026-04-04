@@ -21,9 +21,7 @@
     "pulseaudio",
     "custom/pipe",
     "backlight",
-    "custom/pipe",
     "network",
-    "custom/pipe",
     "battery",
   ],
 
@@ -60,7 +58,7 @@
   },
 
   "clock": {
-    "format": "{:%m/%d/%Y %I:%M %p}",
+    "format": "{:%I:%M %p}",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
@@ -74,30 +72,30 @@
     },
   },
   "network": {
-    "format-wifi": " ",
+    "format-wifi": "",
     "format-ethernet": "",
-    "format-disconnected": "",
-    "tooltip-format-disconnected": "Error",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "format-disconnected": "󰌙",
+    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} 🖧 ",
-    "on-click": "kitty sh -c impala",
+    "on-click": "~/.config/waybar/scripts/toggle-overlay.sh network-overlay kitty --class network-overlay sh -c impala",
   },
   "bluetooth": {
     "format-on": "󰂯",
     "format-off": "BT-off",
     "format-disabled": "󰂲",
-    "format-connected-battery": "{device_alias} {device_battery_percentage}% 󰂯",
+    "format-connected-battery": "{device_battery_percentage}% 󰂀 󰂯",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-    "on-click": "kitty sh -c bluetui",
+    "on-click": "~/.config/waybar/scripts/toggle-overlay.sh bluetooth-overlay kitty --class bluetooth-overlay sh -c bluetui",
   },
   "pulseaudio": {
     "format": "{volume}% {icon}  {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-muted": "󰝟 {format_source}",
-    "format-source": "{volume}% ",
+    "format-source": "{volume}% ",
     "format-source-muted": "󰍭",
     "format-icons": {
       "headphone": "󰋋",
@@ -105,10 +103,10 @@
       "headset": "󰋎",
       "phone": "󰏲",
       "portable": "󰄝",
-      "car": "",
+      "car": "",
       "default": ["󰕿", "󰖀", "󰕾"],
     },
-    "on-click": "kitty sh -c ncpamixer",
+    "on-click": "~/.config/waybar/scripts/toggle-overlay.sh audio-overlay kitty --class audio-overlay sh -c ncpamixer",
     "scroll-step": 1,
     "tooltip": false,
   },
@@ -152,26 +150,27 @@
   },
   "custom/pipe": {
     "format": "|",
+    "tooltip": false,
   },
   "cpu": {
     "format": "󰻠",
     "tooltip": true,
-    "on-click": "kitty sh -c btop",
+    "on-click": "~/.config/waybar/scripts/toggle-overlay.sh btop-overlay kitty --class btop-overlay sh -c btop",
   },
   "memory": {
     "format": "",
-    "on-click": "kitty sh -c btop",
+    "on-click": "~/.config/waybar/scripts/toggle-overlay.sh btop-overlay kitty --class btop-overlay sh -c btop",
   },
   "temperature": {
     "critical-threshold": 80,
     "format": "",
-    "on-click": "kitty sh -c btop",
+    "on-click": "~/.config/waybar/scripts/toggle-overlay.sh btop-overlay kitty --class btop-overlay sh -c btop",
   },
   "tray": {
-    "spacing": 8, // Recommended to add spacing here for visual separation
+    "spacing": 5, // Recommended to add spacing here for visual separation
   },
   "custom/tray-icon": {
-    "format": "󰹯",
+    "format": "󰍜",
     "tooltip": false,
   },
 
@@ -181,7 +180,7 @@
     "drawer": {
       "transition-duration": 200,
       "transition-left-to-right": true,
-      "click-to-reveal": true, // ADDED: This makes it open on click
+      "click-to-reveal": true,
       "hide-on-scroll": false,
     },
   },

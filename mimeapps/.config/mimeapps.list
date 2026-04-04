@@ -14,7 +14,12 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 x-scheme-handler/about=zen.desktop
 x-scheme-handler/unknown=zen.desktop
-x-scheme-handler/deadlock-mod-manager=deadlock-modmanager-bin-handler.desktop
+x-scheme-handler/deadlock-mod-manager=deadlock-modmanager-handler.desktop
+x-scheme-handler/deadlock-modmanager=deadlock-modmanager-handler.desktop
+x-scheme-handler/dlmm=deadlock-modmanager-handler.desktop
+x-scheme-handler/ror2mm=r2modman.desktop
+x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
+x-scheme-handler/discord=vesktop.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;zen.desktop;
