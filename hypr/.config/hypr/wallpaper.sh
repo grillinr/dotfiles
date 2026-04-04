@@ -42,7 +42,7 @@ rofi_override="element-icon{size:${adjusted_icon_size}%;}"
 
 # Kill existing wallpaper daemons for video
 kill_wallpaper_for_video() {
-  swww kill 2>/dev/null
+  awww kill 2>/dev/null
   pkill mpvpaper 2>/dev/null
   pkill swaybg 2>/dev/null
   pkill hyprpaper 2>/dev/null
@@ -101,13 +101,16 @@ apply_image_wallpaper() {
 
   kill_wallpaper_for_image
 
-  if ! pgrep -x "swww-daemon" >/dev/null; then
-    echo "Starting swww-daemon..."
-    swww-daemon --format xrgb &
+  if ! pgrep -x "awww-daemon" >/dev/null; then
+    awww-daemon --format xrgb &
+    sleep 2  # Give daemon time to start
   fi
 
-  swww img -o "$focused_monitor" "$image_path" $SWWW_PARAMS
-
+  if awww img -o "$focused_monitor" "$image_path" $SWWW_PARAMS; then
+    # Save selected wallpaper for persistence
+    mkdir -p "$(dirname "$wallpaper_current")"
+    echo "$image_path" > "$wallpaper_current"
+  fi
 }
 
 # Main function
