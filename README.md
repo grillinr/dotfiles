@@ -11,31 +11,29 @@ This repository contains my Arch Linux dotfiles with a Gruvbox theme and configu
 **ALWAYS READ SCRIPTS BEFORE RUNNING ON YOUR SYSTEM**
 
 ```bash
+# Full install (packages + dotfiles)
 curl -fsSL https://raw.githubusercontent.com/grillinr/dotfiles/main/install.sh | bash
+
+# Dotfiles only (skip package install)
+curl -fsSL https://raw.githubusercontent.com/grillinr/dotfiles/main/install.sh | bash -s -- --dotfiles
+
+# Packages only (skip stow)
+curl -fsSL https://raw.githubusercontent.com/grillinr/dotfiles/main/install.sh | bash -s -- --packages
+
+# Dry run (show what would happen)
+./install.sh --dry-run
 ```
 
 ## Installation
 
-### Automatic Installation (Recommended)
-The installation script will automatically:
-- Install all required packages from official repositories and AUR
-- Backup existing dotfiles
-- Symlink all configuration files using `stow`
-- Enable necessary system services
-- Add user to required groups
+### Modes
 
-### Manual Installation
-```bash
-# Install packages
-sudo pacman -S --needed $(cat packages/pkglist.txt)
-yay -S --needed $(cat packages/aur-installed.txt | grep -v "->" | awk '{print $1}')
-
-# Install GNU Stow
-sudo pacman -S stow
-
-# Install dotfiles
-./install.sh
-```
+| Flag | Action |
+|------|--------|
+| `--all` | Packages + dotfiles (default) |
+| `--dotfiles` | Stow only, skip package install |
+| `--packages` | Install packages only, skip stow |
+| `--dry-run` | Show commands without executing |
 
 ## 🔧 Post-Installation
 
@@ -49,6 +47,7 @@ sudo pacman -S stow
 - **Status Bar**: Waybar with custom modules
 - **Terminal**: Kitty with custom theme and configuration
 - **Application Launcher**: Rofi (Wayland) with custom theme
+- **GTK Theming**: dconf + GTK3 settings (Andromeda-dark theme)
 - **Notification Daemon**: SwayNC
 - **Logout Screen**: Wlogout
 - **Text Editor**: Neovim with LazyVim configuration
@@ -63,6 +62,7 @@ sudo pacman -S stow
 - **Kitty** - Fast terminal emulator
 - **Waybar** - Customizable status bar
 - **Rofi** - Application launcher
+- **GTK Theming** - dconf + GTK3 settings
 - **Swaync** - Notification daemon
 - **Wlogout** - Logout screen
 - **Wofi** - Alternative launcher

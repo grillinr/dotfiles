@@ -15,6 +15,7 @@ chromium
 cliphist
 cloudflared
 cursor-bin
+dconf
 discord
 docker
 docker-compose

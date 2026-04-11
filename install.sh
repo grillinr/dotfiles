@@ -6,6 +6,41 @@
 
 set -e # Exit on any error
 
+# Parse arguments
+MODE="all"
+DRY_RUN=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --all)
+      MODE="all"
+      ;;
+    --dotfiles)
+      MODE="dotfiles"
+      ;;
+    --packages)
+      MODE="packages"
+      ;;
+    --dry-run)
+      DRY_RUN=true
+      ;;
+    *)
+      print_error "Unknown option: $1"
+      print_info "Usage: $0 [--all|--dotfiles|--packages|--dry-run]"
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+dry_run() {
+  if [[ "$DRY_RUN" == "true" ]]; then
+    print_info "[DRY RUN] $*"
+  else
+    "$@"
+  fi
+}
+
 # Color codes for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -237,25 +272,41 @@ stow_dotfiles() {
   fi
 }
 
+# Function to load dconf settings
+load_dconf() {
+  local dconf_file="$SCRIPT_DIR/gtk/.config/dconf/user"
+  if [[ -f "$dconf_file" ]]; then
+    print_info "Loading dconf settings..."
+    dry_run dconf load / < "$dconf_file" || print_warning "Failed to load dconf settings"
+  fi
+}
+
 # Main installation function
 main() {
-  print_info "=== Dotfiles Installation Started ==="
+  print_info "=== Dotfiles Installation Started (mode: $MODE) ==="
 
-  # Install GNU Stow first (needed for dotfiles)
-  install_stow || {
-    print_error "Failed to install GNU Stow"
-    exit 1
-  }
+  if [[ "$MODE" == "all" ]] || [[ "$MODE" == "packages" ]]; then
+    # Install GNU Stow first (needed for dotfiles)
+    install_stow || {
+      print_error "Failed to install GNU Stow"
+      exit 1
+    }
 
-  # Install packages
-  install_pacman_packages || print_warning "Some pacman packages may have failed to install"
-  install_aur_packages || print_warning "Some AUR packages may have failed to install"
+    # Install packages
+    install_pacman_packages || print_warning "Some pacman packages may have failed to install"
+    install_aur_packages || print_warning "Some AUR packages may have failed to install"
+  fi
 
-  # Stow dotfiles
-  stow_dotfiles || {
-    print_error "Failed to stow dotfiles"
-    exit 1
-  }
+  if [[ "$MODE" == "all" ]] || [[ "$MODE" == "dotfiles" ]]; then
+    # Stow dotfiles
+    stow_dotfiles || {
+      print_error "Failed to stow dotfiles"
+      exit 1
+    }
+
+    # Load dconf settings if available
+    load_dconf
+  fi
 
   print_success "=== Dotfiles Installation Completed ==="
   print_info "Please restart your terminal and log out/in for changes to take effect"

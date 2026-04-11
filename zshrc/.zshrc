@@ -52,7 +52,7 @@ alias pacup='sudo pacman -Rns $(pacman -Qdtq)'
 alias hypr='cd /home/nathan/.config/hypr; nvim .'
 alias school='cd /home/nathan/repos/school/25FS/'
 alias nq='cd /home/nathan/repos/nq; nvim .'
-alias start-nq='npx concurrently --names "backend,frontend"  "cd ~/repos/nq/backend && go run ." "cd ~/repos/nq/nq-frontend && npm start"'
+alias start-nq='npx concurrently --names "backend,frontend"  "cd ~/repos/nq/backend && go run ." "cd ~/repos/nq/frontend && npm start"'
 alias startnq='npx concurrently --names backend,frontend "cd ~/repos/nq/backend && go run ." "cd ~/repos/nq/nq-frontend && npx expo start --tunnel"'
 
 # Helphul commands

@@ -1,6 +1,5 @@
 {
   "position": "top",
-  "height": 20,
   "spacing": 0,
   "reload_style_on_change": true,
   "modules-left": [
@@ -59,6 +58,7 @@
 
   "clock": {
     "format": "{:%I:%M %p}",
+    "format-alt": "{:%m-%d-%Y}",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
@@ -72,9 +72,9 @@
     },
   },
   "network": {
-    "format-wifi": "",
-    "format-ethernet": "",
-    "format-disconnected": "󰌙",
+    "format-wifi": " ",
+    "format-ethernet": " ",
+    "format-disconnected": "󰌙 ",
     "tooltip-format-disconnected": "Disconnected",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} 🖧 ",
@@ -82,7 +82,7 @@
   },
   "bluetooth": {
     "format-on": "󰂯",
-    "format-off": "BT-off",
+    "format-off": "󰂲",
     "format-disabled": "󰂲",
     "format-connected-battery": "{device_battery_percentage}% 󰂀 󰂯",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
@@ -95,14 +95,14 @@
     "format": "{volume}% {icon}  {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-muted": "󰝟 {format_source}",
-    "format-source": "{volume}% ",
+    "format-source": "{volume}% 󰍬",
     "format-source-muted": "󰍭",
     "format-icons": {
       "headphone": "󰋋",
-      "hands-free": "󰥰",
-      "headset": "󰋎",
-      "phone": "󰏲",
-      "portable": "󰄝",
+      "hands-free": "󰥰 ",
+      "headset": "󰋎 ",
+      "phone": "󰏲 ",
+      "portable": "󰄝 ",
       "car": "",
       "default": ["󰕿", "󰖀", "󰕾"],
     },
@@ -132,7 +132,7 @@
     "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"],
   },
   "custom/pacman": {
-    "format": " {}",
+    "format": " {}",
     "interval": 300,
     "exec": "checkupdates | wc -l",
     "exec-if": "exit 0",
@@ -167,7 +167,7 @@
     "on-click": "~/.config/waybar/scripts/toggle-overlay.sh btop-overlay kitty --class btop-overlay sh -c btop",
   },
   "tray": {
-    "spacing": 5, // Recommended to add spacing here for visual separation
+    "spacing": 5,
   },
   "custom/tray-icon": {
     "format": "󰍜",
