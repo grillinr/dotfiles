@@ -92,7 +92,7 @@
     "on-click": "~/.config/waybar/scripts/toggle-overlay.sh bluetooth-overlay kitty --class bluetooth-overlay sh -c bluetui",
   },
   "pulseaudio": {
-    "format": "{volume}% {icon}  {format_source}",
+    "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-muted": "󰝟 {format_source}",
     "format-source": "{volume}% 󰍬",
@@ -136,7 +136,7 @@
     "interval": 300,
     "exec": "checkupdates | wc -l",
     "exec-if": "exit 0",
-    "on-click": "kitty sh -c 'yay --noconfirm --needed; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+    "on-click": "~/.config/waybar/scripts/toggle-overlay.sh pacman-overlay kitty --class pacman-overlay sh -c 'yay --noconfirm --needed; sudo pacman -Syu; paccache -r; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
     "signal": 8,
     "tooltip": false,
   },

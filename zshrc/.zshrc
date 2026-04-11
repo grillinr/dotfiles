@@ -31,7 +31,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.config/hypr/obscure-scripts/package_management.sh"
+source "$HOME/.config/hypr/scripts/package_management.sh"
 
 # Replace built in shells commands
 alias ls='eza -G --icons'
