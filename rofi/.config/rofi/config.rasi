@@ -27,7 +27,7 @@ configuration {
 
 /* ---- Window ---- */
 window {
-    border-radius: 15px;
+    border-radius: 0;
     border: 2px solid;
     border-color: @foreground;
     location: center;
@@ -52,7 +52,7 @@ inputbar {
 entry {
   margin: 0;
   padding: 8px;
-  border-radius: 15px;
+  border-radius: 0;
   background-color: @selected;
   text-color: @text-selected;
   placeholder: "Search";
@@ -73,7 +73,7 @@ element {
     orientation: horizontal;
     padding: 8px 10px 0px 0px;
     spacing: 15px;
-    border-radius: 12px;
+    border-radius: 0;
     cursor: pointer;
 }
 
@@ -90,7 +90,7 @@ element.alternate.normal {
 element selected.normal {
     border: 2px solid;
     border-color: @selected;
-    border-radius: 12px;
+    border-radius: 0;
     background-color: @background;
     text-color: @foreground;
 }
@@ -101,7 +101,7 @@ element-icon {
     background-color: @foreground;
     // padding: 10px 10px 10px 10px;
     margin: 7px 10px 7px 10px;
-    border-radius: 50%;
+    border-radius: 0;
     text-color: inherit;
     cursor: inherit;
 }
@@ -122,7 +122,7 @@ scrollbar {
 /* ---- Message & Errors ---- */
 textbox, error-message {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 0;
     background-color: @background-alt;
     text-color: @background;
 }

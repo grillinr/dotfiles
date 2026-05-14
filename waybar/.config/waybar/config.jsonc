@@ -2,14 +2,16 @@
   "position": "top",
   "spacing": 0,
   "reload_style_on_change": true,
+  "on-sigusr1": "hide",
+  "on-sigusr2": "show",
   "modules-left": [
     "custom/notification",
     "custom/pacman",
-    "group/tray-drawer",
     "hyprland/workspaces",
   ],
   "modules-center": ["clock"],
   "modules-right": [
+    "group/tray-drawer",
     "custom/colorpicker",
     "cpu",
     "memory",
@@ -170,7 +172,7 @@
     "spacing": 5,
   },
   "custom/tray-icon": {
-    "format": "󰍜",
+    "format": "󰇙",
     "tooltip": false,
   },
 
@@ -179,7 +181,7 @@
     "modules": ["custom/tray-icon", "tray"],
     "drawer": {
       "transition-duration": 200,
-      "transition-left-to-right": true,
+      "transition-left-to-right": false,
       "click-to-reveal": true,
       "hide-on-scroll": false,
     },

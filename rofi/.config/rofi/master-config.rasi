@@ -29,7 +29,7 @@ configuration {
 
 /* ---- Window ---- */
 window {
-    border-radius: 20px;
+    border-radius: 0;
     border: 2px solid;
     border-color: @foreground;
     location: center;
@@ -52,7 +52,7 @@ inputbar {
 /* ---- Entry ---- */
 entry {
     padding: 8px;
-    border-radius: 12px;
+    border-radius: 0;
     background-color: @selected;
     text-color: @text-selected;
     placeholder: "Search";
@@ -65,12 +65,12 @@ listview {
 }
 element {
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 0;
     cursor: pointer;
 }
 element selected.normal {
     border: 1px 6px 1px 6px;  // Fix: Ensure valid border syntax
-    border-radius: 10px;
+    border-radius: 0;
     border-color: @selected;
     background-color: @selected;  // Fix: Ensures visibility when selected
     text-color: @text-selected;
@@ -107,7 +107,7 @@ scrollbar {
 /* ---- Message & Errors ---- */
 textbox, error-message {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 0;
     background-color: @background-alt;
     text-color: @background;
 }
