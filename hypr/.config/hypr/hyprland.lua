@@ -1,0 +1,7 @@
+require("luaconfigs.styles")
+require("luaconfigs.environment")
+require("luaconfigs.monitors")
+require("luaconfigs.inputs")
+require("luaconfigs.workspaces")
+require("luaconfigs.windowrules")
+require("luaconfigs.keybinds")
