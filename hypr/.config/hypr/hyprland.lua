@@ -1,3 +1,4 @@
+require("luaconfigs.vars")
 require("luaconfigs.styles")
 require("luaconfigs.environment")
 require("luaconfigs.monitors")

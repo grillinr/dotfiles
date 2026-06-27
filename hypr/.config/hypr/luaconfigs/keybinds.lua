@@ -70,7 +70,7 @@ bind("ALT + r", hl.dsp.exec_cmd("~/.config/swaync/refresh.sh"))
 bind(main_mod .. " + R", hl.dsp.exec_cmd("hyprctl reload"))
 
 bind(main_mod .. " + SHIFT + Return", hl.dsp.exec_cmd("pypr-client toggle term"))
-bind(main_mod .. " + Z", hl.dsp.exec_cmd("pypr-client toggle spotify"))
+bind(main_mod .. " + Z", hl.dsp.workspace.toggle_special("spot"))
 
 bind(main_mod .. " + W", hl.dsp.workspace.toggle_special("top"))
 bind(main_mod .. " + S", hl.dsp.workspace.toggle_special("bottom"))

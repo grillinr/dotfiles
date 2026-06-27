@@ -46,7 +46,7 @@ hl.window_rule({
 
 -- Confine the mouse pointer inside any Steam game window
 hl.window_rule({
-	match = { class = "^(steam_app_.*)$" },
+	-- match = { class = "^(steam_app_.*)$" },
 	-- confine_pointer = true,
 })
 
