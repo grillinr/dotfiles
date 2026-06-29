@@ -1,4 +1,4 @@
-# Dotfiles Repository Agent Guidelines for All Agents
+# Dotfiles Repository Agent Guidelines
 
 This document outlines the architectural standards, code style, and operational procedures for this dotfiles repository. Agents and developers must adhere to these guidelines to ensure consistency across the configuration management system.
 
