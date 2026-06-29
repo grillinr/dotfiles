@@ -1,21 +1,25 @@
 hl.config({
-  input = {
-    kb_layout = "us",
-    kb_variant = "",
-    kb_model = "",
-    kb_options = "caps:escape, leftmeta:super",
-    kb_rules = "",
-    follow_mouse = 1,
-    sensitivity = -0.1,
-    scroll_method = 2,
-    scroll_button = 274,
-    scroll_factor = 1,
-    touchpad = {
-      natural_scroll = true,
-      scroll_factor = 0.15,
-      clickfinger_behavior = true,
-    },
-  },
+	cursor = {
+		enable_hyprcursor = false,
+		no_hardware_cursors = false,
+	},
+	input = {
+		kb_layout = "us",
+		kb_variant = "",
+		kb_model = "",
+		kb_options = "caps:escape, leftmeta:super",
+		kb_rules = "",
+		follow_mouse = 1,
+		sensitivity = -0.1,
+		scroll_method = 2,
+		scroll_button = 274,
+		scroll_factor = 1,
+		touchpad = {
+			natural_scroll = true,
+			scroll_factor = 0.15,
+			clickfinger_behavior = true,
+		},
+	},
 })
 
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })

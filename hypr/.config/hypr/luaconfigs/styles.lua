@@ -7,12 +7,12 @@ hl.config({
 		no_donation_nag = true,
 	},
 	general = {
-		gaps_in = 0,
-		gaps_out = 0,
-		border_size = 0,
+		gaps_in = 2,
+		gaps_out = 4,
+		border_size = 2,
 		col = {
 			active_border = {
-				colors = { "rgba(989898ff)", "rgba(989898f0)" },
+				colors = { "rgba(ebdbb2ff)", "rgba(989898f0)" },
 				angle = 45,
 			},
 			inactive_border = "rgba(b7b7b7f0)",
